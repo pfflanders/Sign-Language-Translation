@@ -4,6 +4,6 @@ Github Repo focused on the translation of sign language using machine learning
 ```python
 .  .  O
 .  X  .
-.  .  .
+.  .  X
 ```
 
