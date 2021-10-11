@@ -1,7 +1,7 @@
 # Sign-Language-Translation
 Github Repo focused on the translation of sign language using machine learning
 
-Abstract
+**Abstract**
 In 3-4 sentences, describe what problem the project addresses, and the overall approach you will use to solve that problem.
 
 Planned Deliverables
