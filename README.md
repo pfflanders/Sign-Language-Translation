@@ -1,10 +1,10 @@
 # Sign-Language-Translation
 Github Repo focused on the translation of sign language using machine learning
 
-###**Abstract**
+### **Abstract**
 The goal of our project is to expand the field of sign language translation with a laptop based tool which provides live-feed translation of basic sign language gestures. We wish to accomplish this by creating a CNN small & fast enough to be run on \*standard laptops, but robust enough to accurately translate words and symbols when they are present and not return too many false classifications.
 
-###**Planned Deliverables**
+### **Planned Deliverables**
 Select one:
 - **a webapp** would focus on deploying a trained model in a website environment likely using the TensorflowJS packages available. 
 If we wanted to focus less on machine learning / are struggling to expand our model beyond ASL, this could be a good path to take.
@@ -15,7 +15,7 @@ Concisely state what you are aiming to create and what capabilities it will have
 
 In each case, please make sure to be clear about what the interface is for your project. If you are making an app, then the interface should likely be either a local app or a webapp. If you are focusing on scientific computation or data science, then a Jupyter notebook may be an appropriate interface -- talk to me if you're not sure.
 
-###**Resources Required**
+### **Resources Required**
 Obviously to train any classification models, we require datasets to train on. There exist many labeled alphanumeric ASL datasets. I do not know yet about other languages. There is a large field focus on data generation which could be explored if we were lacking data for a specific language. *This is not going in the actual proposal this will be deleted after we speak*.
 
 https://www.kaggle.com/datamunge/sign-language-mnist
@@ -39,17 +39,17 @@ If you can't find data for your original idea, that's ok! Think of something rel
 
 Most projects should involve data in some way, but certain projects may not require data. Ask me if you're not sure.
 
-###**Tools and Skills Required**
+### **Tools and Skills Required**
 
 What skills will you need? Machine learning, database management, complex visualization, something else? Do a bit of research into which Python packages accomplish the tasks you are going to need. Feel free to look ahead at what we're going to do in the remainder of the course -- you're likely to find some of the packages you'll need there!
 
-###**What You Will Learn**
+### **What You Will Learn**
 What will you learn by completing this project? Feel free to mention particular techniques, software packages, version control, project management principles, any other learning goals you might have.
 
-###**Risks**
+### **Risks**
 What are two things that could potentially stop you from achieving the full deliverable above? Maybe it turns out that the signal you thought would be present in the data just doesn't exist? Or maybe your idea requires more computational power than is available to you? What particular risks might be applicable for your project?
 
-###**Ethics**
+### **Ethics**
 All projects we undertake involve decisions about whose interests matter; which problems are important; and which tradeoffs are considered acceptable. Take some time to reflect on the potential impacts of your product on its users and the broader world. If you can see potential biases or harms from your work, describe some of the ways in which you will work to mitigate them. Remember that even relatively simple ideas can have unexpected and impactful biases. Here's a nice introductory video for thinking about these questions, and here's one that goes into somewhat more detail. Here are some relevant examples: - A recipe recommendation app can privilege the cuisines of some locales over others. Will your user search recipes by ingredients? Peanut butter and tomato might seem an odd combination in the context of European cuisine, but is common in many traditional dishes of the African diaspora. A similar set of questions applies to recommendation systems related to style or beauty. - A sentiment analyzer must be trained on specific languages. What languages will be included? Will diverse dialects be included, or only the "standard" version of the target language? Who would be excluded by such a choice, and how will you communicate about your limitations?
 
 A related question is: should this app exist? In a few sentences, discuss the following questions:
@@ -60,7 +60,7 @@ Will the world become an overall better place because of the existence of our pr
 Criminal activity is predictable based on other features of a person or location.
 The world is a better place when police are able to perform their roles more efficiently.
 
-###**Tentative Timeline**
+### **Tentative Timeline**
 Week 3 is now, so our 2 week checkpoints are
 - Week 5: 
 - Week 7: 
