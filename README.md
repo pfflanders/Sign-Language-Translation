@@ -2,14 +2,35 @@
 Github Repo focused on the translation of sign language using machine learning
 
 **Abstract**
-The goal of our project is to expand the field of sign language translation with another tool which provides live-feed translation of basic sign language gestures. Obvious ways in which we would wish to expand this project would be by adjusting our classifying model to interpret other variants of sign-language(we will probably start with ASL)
+The goal of our project is to expand the field of sign language translation with a laptop based tool which provides live-feed translation of basic sign language gestures. We wish to accomplish this by creating a CNN small & fast enough to be run on \*standard laptops, but robust enough to accurately translate words and symbols when they are present and not return too many false classifications.
 
 **Planned Deliverables**
+Select one:
+- **a webapp** would focus on deploying a trained model in a website environment likely using the TensorflowJS packages available. 
+If we wanted to focus less on machine learning / are struggling to expand our model beyond ASL, this could be a good path to take.
+- **a locally run program** would more focused the machine learning aspect of this project and would prioritize the accurate, timely, and possible generalization of translating. If we wanted to explore Transfer-Learning to try and capitalize on existing models to include more than just ASL, we would need time to focus on this.
+- Obviously, if we are finding lots of success along the way and have extra time we can aim to do both of these to make an even more impressive project!
+
 Concisely state what you are aiming to create and what capabilities it will have. Are you making a webapp? A Python package for others to use? Code that creates a novel data set? Etc. Please consider two scenarios: - "Full success." What will your deliverable be if everything works out for you exactly as you plan? - "Partial success." What useful deliverable will you be able to offer even if things don't 100% work out? For example, maybe you aren't able to get that webapp together, but you can still create a code repository that showcases the machine learning pipeline needed to use to support the app. Have a contingency plan!
 
 In each case, please make sure to be clear about what the interface is for your project. If you are making an app, then the interface should likely be either a local app or a webapp. If you are focusing on scientific computation or data science, then a Jupyter notebook may be an appropriate interface -- talk to me if you're not sure.
 
 **Resources Required**
+Obviously to train any classification models, we require datasets to train on. There exist many labeled alphanumeric ASL datasets. I do not know yet about other languages. There is a large field focus on data generation which could be explored if we were lacking data for a specific language. *This is not going in the actual proposal this will be deleted after we speak*.
+
+https://www.kaggle.com/datamunge/sign-language-mnist
+
+https://www.kaggle.com/grassknoted/asl-alphabet
+
+https://www.kaggle.com/prathumarikeri/american-sign-language-09az
+
+https://www.kaggle.com/prathumarikeri/indian-sign-language-isl
+
+http://home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html
+
+I believe our laptops will be sufficient to train the classifiers necessary for this project since we are focusing on making this model portable. 
+
+
 What resources do you need in order to complete your project? Data? Computing power? An account with a specific service?
 
 Please pay special attention to the question of data. If your project idea involves data, include at least one link to a data set you can use. It's also acceptable to link to a website from which you intend to scrape the data you will use (although note that high-quality scraping is a lot of work).
