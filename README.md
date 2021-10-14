@@ -1,5 +1,5 @@
 # Sign-Language-Translation
-Github Repo focused on the translation of sign language using machine learning
+Machine Learning Project with an interface providing the live translation of (hopefully multiple) sign languages.
 
 ### **Abstract**
 Sign languages (or signed languages) are languages that utilize visual and manual modality (i.e., gestures) to convey meaning. Rather like other spoken languages of the world, sign languages are not universal or mutually comprehensible despite the various similarities among them. It is important to note that sign languages are not merely visual manifestations of other spoken languages like English, rather they are unique languages with their own set of linguistic rules.
@@ -7,13 +7,13 @@ Sign languages (or signed languages) are languages that utilize visual and manua
 Sign language processing is an emerging field of machine learning that falls within the intersection of natural language processing (NLP) and computer vision. As the name suggests, it involves both the analysis and automatic processing of sign language content. The goal of this project is to expand the field of sign language translation with a laptop-based tool which provides live-feed translation of basic sign language gestures. The overarching methodology involves creating a Computational Neural Network (CNN) that is not only small and fast enough to be run on standard laptops, but also robust enough to accurately translate words and symbols when they are present and not return too many false classifications. Additionally, with over two hundred sign languages being used around the world, a further aim of this project will be to widen the range of sign language input and attempt to process and analyze a significant portion of these languages. 
 
 ### **Planned Deliverables**
-- Partial Success: **a locally run program** would more focused the machine learning aspect of this project and would prioritize the accurate, timely, and possible generalization of translating. If we wanted to explore Transfer-Learning to try and capitalize on existing models to include more than just ASL, we would need time to focus on this.
-- More Success: **a webapp** would focus on deploying a trained model in a website environment likely using the TensorflowJS packages available. If we wanted to focus less on machine learning / are struggling to expand our model beyond ASL, this could be a good path to take.
-- Full Success: **A webbapp which incorporates multiple translation models** would combine both of the above tasks and flesh them out, making a more complete experience.
-- Obviously, if we are finding lots of success along the way and have extra time we can aim to improve accuracies to make an even more impressive project!
+- Partial Success: **a locally run program** would more focused the machine learning aspect of this project and would prioritize the accurate, timely, and possible generalization of translating. We will look into using Transfer Learning to try and capitalize on existing image classification models to create models specific for languages other than ASL. 
+- More Success: **a webapp** would focus on deploying a trained model in a website environment likely using the TensorflowJS package and others available. If we wanted to focus less on machine learning / are struggling to expand our model beyond ASL, we will focus on enhancing the interface.
+- Full Success: **A webbapp which incorporates multiple translation languages** would combine both of the above tasks and flesh them out, making a more complete experience.
+- Obviously, if we are finding lots of success along the way and have extra time we can aim to improve accuracies. Additionally one thing that we could explore if we are finding success is the implementation of a set of prior frames to our model to explore the possiblility of recognizing gestures which include motion.  
 
 ### **Resources Required**
-Obviously to train any classification models, we require datasets to train on. There exist many labeled alphanumeric ASL datasets. I do not know yet about other languages. There is a large field focus on data generation which could be explored if we were lacking data for a specific language. *This is not going in the actual proposal this will be deleted after we speak*.
+Obviously to train any classification models, we require datasets to train on. There exist many labeled ASL alphabet datasets. There are other languages which are similar to ASL and which our models would be able to learn. There is a large field focus on data generation which could be explored if we were lacking data and wanted to explore this. 
 
 https://www.kaggle.com/datamunge/sign-language-mnist
 
@@ -28,20 +28,11 @@ http://home.ustc.edu.cn/~pjh/openresources/cslr-dataset-2015/index.html
 I believe our laptops will be sufficient to train the classifiers necessary for this project since we are focusing on making this model portable. 
 
 
-What resources do you need in order to complete your project? Data? Computing power? An account with a specific service?
-
-Please pay special attention to the question of data. If your project idea involves data, include at least one link to a data set you can use. It's also acceptable to link to a website from which you intend to scrape the data you will use (although note that high-quality scraping is a lot of work).
-
-If you can't find data for your original idea, that's ok! Think of something related to your group's interests for which you can find data.
-
-Most projects should involve data in some way, but certain projects may not require data. Ask me if you're not sure.
-
 ### **Tools and Skills Required**
-
-What skills will you need? Machine learning, database management, complex visualization, something else? Do a bit of research into which Python packages accomplish the tasks you are going to need. Feel free to look ahead at what we're going to do in the remainder of the course -- you're likely to find some of the packages you'll need there!
+Our project focuses on the training and implmentation of a CNN, so we will refine our Tensorflow skills, data manipulation abilities, and will need to learn about deploying models for web use. 
 
 ### **What You Will Learn**
-What will you learn by completing this project? Feel free to mention particular techniques, software packages, version control, project management principles, any other learning goals you might have.
+Our team does not have much experience making our own machine learning models so we'll need to learn the Tensorflow API. he other large challenge will be the development of the interface and making sure we can deploy our model.
 
 ### **Risks**
 What are two things that could potentially stop you from achieving the full deliverable above? Maybe it turns out that the signal you thought would be present in the data just doesn't exist? Or maybe your idea requires more computational power than is available to you? What particular risks might be applicable for your project?
