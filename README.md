@@ -49,7 +49,6 @@ Though this project has the potential for bias and could inadvertently harm a sm
 
 ### **Tentative Timeline**
 Week 3 is now, so our 2 week checkpoints are
-- Week 5: 
-- Week 7: 
-- Week 9: 
-There will be checkpoints for the project at approximately two-week intervals. With this in mind, please describe what you expect to achieve after two, four, and six weeks. At each stage, you should have "something that works." For example, maybe in two weeks you'll ready to demonstrate the data acquisition pipeline, in four weeks you'll be able to demonstrate some data analysis, and in six weeks you'll have your full machine learning pipeline set up. Please keep in mind that you'll be asked to present at each of these checkpoints. Showing "something that works" will usually be necessary for full credit. The "something that works" idea is related to the common concept of "minimum viable products" in software development, and is visually illustrated here:
+- Week 5: Working Model which successfully characterizes single images
+- Week 7: Implementation of the model into a live feed. Explore training additional models
+- Week 9: Deployment of model(s) into web service. 
