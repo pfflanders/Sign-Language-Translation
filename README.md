@@ -1,5 +1,6 @@
 # Sign-Language-Translation
 Machine Learning Project with an interface providing the live translation of (hopefully multiple) sign languages.
+Authors: [Peter Flanders](https://github.com/pfflanders), [Mansa Krishna](https://github.com/mansakrishna23), and [Elliot Shin](https://github.com/elliotshin)
 
 ### **Abstract**
 Sign languages (or signed languages) are languages that utilize visual and manual modality (i.e., gestures) to convey meaning. Rather like other spoken languages of the world, sign languages are not universal or mutually comprehensible despite the various similarities among them. It is important to note that sign languages are not merely visual manifestations of other spoken languages like English, rather they are unique languages with their own set of linguistic rules.
