@@ -20,8 +20,8 @@ def main():
             break
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
         gray = cv.flip(gray, 1)
-        x1, x2 = 150, 550
-        y1, y2 =  50, 450
+        x1, x2 = 150, 550 # change these values to fit your webcam 
+        y1, y2 =  50, 450 # change these values to fit your webcam
         gray = cv.rectangle(gray, (x1, y1), (x2, y2), (0, 1, 0), 4)
         hand = gray[y1:y2, x1:x2]
         hand = cv.resize(hand, (56, 56))
@@ -35,7 +35,7 @@ def main():
     cap.release()
     cv.destroyAllWindows()
 
-    letter = "blank"
+    letter = "z_blank"
     save_loc = os.path.join("./live", letter)
     os.makedirs(save_loc, exist_ok=True)
     for img in imgs:
