@@ -1,5 +1,7 @@
 sign-language-mnist/
 testing_models/
+live/
+live.zip
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
