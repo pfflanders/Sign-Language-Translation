@@ -30,7 +30,7 @@ def main():
 
         imgs.append(hand)
 
-        if len(imgs) == 1250 or cv.waitKey(1) == ord('q'):
+        if len(imgs) == 250 or cv.waitKey(1) == ord('q'):
             break
     cap.release()
     cv.destroyAllWindows()
