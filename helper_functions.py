@@ -44,5 +44,8 @@ def main():
     print(f"{len(glob.glob(os.path.join(save_loc, '*.png')))} pictures with the letter: {letter}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except:
+        print('failed')
     
