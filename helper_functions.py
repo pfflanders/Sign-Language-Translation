@@ -35,7 +35,7 @@ def main():
     cap.release()
     cv.destroyAllWindows()
 
-    letter = "z_blank"
+    letter = "b"
     save_loc = os.path.join("./live", letter)
     os.makedirs(save_loc, exist_ok=True)
     for img in imgs:
