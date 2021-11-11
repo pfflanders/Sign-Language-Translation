@@ -51,33 +51,33 @@ def main():
         fontThickness = 3
         color = (0,255,0)
         org = (150,100)
-        for i in range(1): #may need to change for loop 
-            #hand = hand.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-            
-            #convert hand image to array, alter dimensions and values to get guess
-            sign = np.asarray(hand)
-            sign = sign/255.0
-            my_hand = sign[:,:].reshape((1,56,56,1))
-            my_hand = (my_hand - my_hand.min())/(my_hand.max() - my_hand.min())
-           
-            my_guess = model.predict(my_hand)
-            
-            #see overall guesses and probability of guesses
-            guess_vals = {tuple(alphabet):my_guess} 
-                
-            letter_index = np.max(my_guess)
-            character = int(np.where(my_guess[0] == letter_index)[0])
-            letter = alphabet[character]
-            print(alphabet[character])
-            print(guess_vals)
-            
-            
 
-           
-            cv.putText(gray,letter,org,font,fontScale,color,fontThickness)
-            cv.imshow("frame", gray)
-            cv.imshow("hand", cv.resize(hand, (400, 400)))
-            
+        #hand = hand.transpose(PIL.Image.FLIP_LEFT_RIGHT)
+
+        #convert hand image to array, alter dimensions and values to get guess
+        sign = np.asarray(hand)
+        sign = sign/255.0
+        my_hand = sign[:,:].reshape((1,56,56,1))
+        my_hand = (my_hand - my_hand.min())/(my_hand.max() - my_hand.min())
+
+        my_guess = model.predict(my_hand)
+
+        #see overall guesses and probability of guesses
+        guess_vals = {tuple(alphabet):my_guess} 
+
+        letter_index = np.max(my_guess)
+        character = int(np.where(my_guess[0] == letter_index)[0])
+        letter = alphabet[character]
+        print(alphabet[character])
+        print(guess_vals)
+
+
+
+
+        cv.putText(gray,letter,org,font,fontScale,color,fontThickness)
+        cv.imshow("frame", gray)
+        cv.imshow("hand", cv.resize(hand, (400, 400)))
+
 
         if cv.waitKey(1) == ord('q'):
             break
