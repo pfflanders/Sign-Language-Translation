@@ -5,7 +5,7 @@ import tensorflow as tf
 
 def main():
     #create alphabet list of potential predictions
-    alphabet = list("abcdefghiklmnopqrstuvwxyz")
+    alphabet = list("abcdefghiklmnopqrstuvwxy") + ['blank']
     #load model
     saved_path = 'testing_models\\full_dense_1'
     
