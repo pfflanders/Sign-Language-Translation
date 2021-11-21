@@ -7,7 +7,7 @@ import pandas as pd
 import cv2 as cv
 
 
-def main():
+def main(letter: str, num_images: int):
     imgs = []
     cap = cv.VideoCapture(0)
     if not cap.isOpened():
@@ -30,13 +30,13 @@ def main():
 
         imgs.append(hand)
 
-        if len(imgs) == 250 or cv.waitKey(1) == ord('q'):
+        if len(imgs) == num_images or cv.waitKey(1) == ord('q'):
             break
     cap.release()
     cv.destroyAllWindows()
 
-    letter = "b"
-    save_loc = os.path.join("./live", letter)
+    letter = letter
+    save_loc = os.path.join("./live2", letter)
     os.makedirs(save_loc, exist_ok=True)
     for img in imgs:
         id = len(glob.glob(os.path.join(save_loc, "*.png")))
@@ -45,7 +45,7 @@ def main():
 
 if __name__ == "__main__":
     try:
-        main()
+        main('z_blank', 600)
     except:
         print('failed')
     
