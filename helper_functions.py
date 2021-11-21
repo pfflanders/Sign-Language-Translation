@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 import cv2 as cv
-
+from time import time_ns
 
 def main(letter: str, num_images: int):
     imgs = []
@@ -39,8 +39,12 @@ def main(letter: str, num_images: int):
     save_loc = os.path.join("./live2", letter)
     os.makedirs(save_loc, exist_ok=True)
     for img in imgs:
-        id = len(glob.glob(os.path.join(save_loc, "*.png")))
-        cv.imwrite(os.path.join(save_loc, f"{id}.png"), img)
+        id = time_ns()//100000
+        try:
+            cv.imwrite(os.path.join(save_loc, f"{id}.png"), img)
+        except:
+            print('imwrite failed')
+            pass
     print(f"{len(glob.glob(os.path.join(save_loc, '*.png')))} pictures with the letter: {letter}")
 
 if __name__ == "__main__":

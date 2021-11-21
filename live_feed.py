@@ -1,45 +1,60 @@
-import os
-import glob
-import time 
-import numpy as np
-import pandas as pd
-
 import cv2 as cv
-import numpy as np # linear algebra
-# import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-
-# import matplotlib.pyplot as plt
-import keras
-#from keras.models import Sequential
-#from keras.layers import Dense, Conv2D , MaxPool2D , Flatten , Dropout , BatchNormalization
-
-import os
-
-#from PIL import Image
-import PIL
+import numpy as np 
 import tensorflow as tf
 
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import InputLayer, Flatten, Dense, ReLU, Softmax, Conv2D, Dropout
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.losses import CategoricalCrossentropy
+from tensorflow.keras.metrics import CategoricalAccuracy
 
 def main():
     #create alphabet list of potential predictions
-    alphabet = list("abcdefghiklmnopqrstuvwxyz")
+    alphabet = list("abcdefghiklmnopqrstuvwxy") + ['blank']
     #load model
-    saved_path = 'testing_models\\full_dense_1'
-    
-    model = tf.keras.models.load_model(saved_path)
-    print(model.summary())
-    cap = cv.VideoCapture(0, cv.CAP_DSHOW)
+    model = Sequential([
+        InputLayer(input_shape=(56, 56, 1)),
+        Conv2D(64, 5),
+        ReLU(),
+        Conv2D(64, 3),
+        ReLU(),
+        Conv2D(64, 3, strides=2),
+        ReLU(),
+        Dropout(0.2),
+        Conv2D(128, 3, strides=2),
+        ReLU(),
+        Dropout(0.2),
+        Conv2D(128, 3, strides=2),
+        ReLU(),
+        Dropout(0.2),
+        Flatten(),
+        Dense(512),
+        ReLU(),
+        Dense(512),
+        ReLU(),
+        Dense(25),
+        Softmax(),
+    ])
+    model.compile(
+        optimizer=Adam(learning_rate=0.001),
+        loss=CategoricalCrossentropy(),
+        metrics=[CategoricalAccuracy()]
+    )
+    model.load_weights(r'testing_models\full_dense_4_colab\variables\variables')
+
+    # cap = cv.VideoCapture(0, cv.CAP_DSHOW)
+    # Removed CAP_DSHOW
+    # if this was necessary then we'll need to figure out why it breaks on my system
+    cap = cv.VideoCapture(0)
     if not cap.isOpened():
         print("Cannot open camera")
         exit()
     while True:
-
         ret, frame = cap.read()
         if not ret:
             print("Can't receive frame. Exiting ...")
             break
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-        #gray = frame
         gray = cv.flip(gray, 1)
         x1, x2 = 150, 550 # change these values to fit your webcam 
         y1, y2 =  50, 450 # change these values to fit your webcam
@@ -52,9 +67,7 @@ def main():
         color = (0,255,0)
         org = (150,100)
 
-        #hand = hand.transpose(PIL.Image.FLIP_LEFT_RIGHT)
-
-        #convert hand image to array, alter dimensions and values to get guess
+        # convert hand image to array, alter dimensions and values to get guess
         sign = np.asarray(hand)
         sign = sign/255.0
         my_hand = sign[:,:].reshape((1,56,56,1))
@@ -62,21 +75,23 @@ def main():
 
         my_guess = model.predict(my_hand)
 
-        #see overall guesses and probability of guesses
-        guess_vals = {tuple(alphabet):my_guess} 
+        # see overall guesses and probability of guesses
+        # guess_vals = {tuple(alphabet):my_guess} 
 
-        letter_index = np.max(my_guess)
-        character = int(np.where(my_guess[0] == letter_index)[0])
+        accuracy = np.max(my_guess)
+        character = np.argmax(my_guess)
         letter = alphabet[character]
-        print(alphabet[character])
-        print(guess_vals)
+        print(f"Guess: {alphabet[character]}, Accuracy:{accuracy}")
+        print()
+        # print(guess_vals)
 
 
 
 
         cv.putText(gray,letter,org,font,fontScale,color,fontThickness)
         cv.imshow("frame", gray)
-        cv.imshow("hand", cv.resize(hand, (400, 400)))
+        # I wanted only a single frame for simplicity.
+        # cv.imshow("hand", cv.resize(hand, (400, 400)))
 
 
         if cv.waitKey(1) == ord('q'):
