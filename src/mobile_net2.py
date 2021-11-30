@@ -26,32 +26,29 @@ def main():
     #create alphabet list of potential predictions
     alphabet = list("abcdefghiklmnopqrstuvwxy") + ['blank']
     #load model
+    
     ## Transfer Learning
     IMG_SIZE = (56,56)
-    IMG_SHAPE = IMG_SIZE + (3,)
+    IMG_SHAPE = IMG_SIZE + (1,)
     base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,
-                                                   include_top=False,
-                                                   weights='imagenet')
+                                                include_top=False,
+                                                weights='imagenet')
     base_model.trainable = False
-    
+
     i = tf.keras.Input(shape=IMG_SHAPE)
     x = base_model(i, training = False)
     base_model_layer = tf.keras.Model(inputs = [i], outputs = [x])
-    ##lambda layer 
-    def to_RGB(image):
-        image = tf.convert_to_tensor(image)
-        image = tf.image.grayscale_to_rgb(image)
-        return image
+    
     
     model = Sequential([
         InputLayer(input_shape=(56, 56, 1)),
-        Lambda(to_RGB),
         base_model_layer,
         Flatten(),
         Dense(512),
         ReLU(),
         Dense(512),
         ReLU(),
+        Dropout(0.5),
         Dense(25),
         Softmax(),
     ])
