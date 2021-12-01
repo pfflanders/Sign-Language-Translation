@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import InputLayer, Flatten, Dense, ReLU, Softmax, Conv2D, Dropout
+from tensorflow.keras.layers import InputLayer, Flatten, Dense, ReLU, Softmax, Conv2D, Dropout, BatchNormalization
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import CategoricalAccuracy
@@ -11,36 +11,57 @@ from tensorflow.keras.metrics import CategoricalAccuracy
 def main():
     #create alphabet list of potential predictions
     alphabet = list("abcdefghiklmnopqrstuvwxy") + ['blank']
-    #load model
+    
+    ## Transfer Learning
+    IMG_SIZE = (56,56)
+    IMG_SHAPE = IMG_SIZE + (1,)
+    base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE, include_top=False, weights=None)
+
     model = Sequential([
-        InputLayer(input_shape=(56, 56, 1)),
-        Conv2D(64, 5),
-        ReLU(),
-        Conv2D(64, 3),
-        ReLU(),
-        Conv2D(64, 3, strides=2),
-        ReLU(),
-        Dropout(0.2),
-        Conv2D(128, 3, strides=2),
-        ReLU(),
-        Dropout(0.2),
-        Conv2D(128, 3, strides=2),
-        ReLU(),
-        Dropout(0.2),
+        base_model,
         Flatten(),
-        Dense(512),
-        ReLU(),
-        Dense(512),
-        ReLU(),
+        Dropout(0.8),
+        BatchNormalization(),
         Dense(25),
         Softmax(),
     ])
     model.compile(
-        optimizer=Adam(learning_rate=0.001),
+        optimizer="adam",
         loss=CategoricalCrossentropy(),
         metrics=[CategoricalAccuracy()]
     )
-    model.load_weights(r'testing_models\full_dense_4_colab\variables\variables')
+    model.load_weights(r'models\mobilenet3\variables\variables')
+    
+    # #load model
+    # model = Sequential([
+    #     InputLayer(input_shape=(56, 56, 1)),
+    #     Conv2D(64, 5),
+    #     ReLU(),
+    #     Conv2D(64, 3),
+    #     ReLU(),
+    #     Conv2D(64, 3, strides=2),
+    #     ReLU(),
+    #     Dropout(0.2),
+    #     Conv2D(128, 3, strides=2),
+    #     ReLU(),
+    #     Dropout(0.2),
+    #     Conv2D(128, 3, strides=2),
+    #     ReLU(),
+    #     Dropout(0.2),
+    #     Flatten(),
+    #     Dense(512),
+    #     ReLU(),
+    #     Dense(512),
+    #     ReLU(),
+    #     Dense(25),
+    #     Softmax(),
+    # ])
+    # model.compile(
+    #     optimizer=Adam(learning_rate=0.001),
+    #     loss=CategoricalCrossentropy(),
+    #     metrics=[CategoricalAccuracy()]
+    # )
+    # model.load_weights(r'testing_models\full_dense_4_colab\variables\variables')
 
     # cap = cv.VideoCapture(0, cv.CAP_DSHOW)
     # Removed CAP_DSHOW
