@@ -1,3 +1,4 @@
+import os
 import cv2 as cv
 import numpy as np 
 import tensorflow as tf
@@ -9,6 +10,7 @@ from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import CategoricalAccuracy
 
 def main():
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
     #create alphabet list of potential predictions
     alphabet = list("abcdefghiklmnopqrstuvwxy") + ['blank']
     
@@ -20,8 +22,6 @@ def main():
     model = Sequential([
         base_model,
         Flatten(),
-        Dropout(0.8),
-        BatchNormalization(),
         Dense(25),
         Softmax(),
     ])
@@ -30,7 +30,7 @@ def main():
         loss=CategoricalCrossentropy(),
         metrics=[CategoricalAccuracy()]
     )
-    model.load_weights(r'models\mobilenet3\variables\variables')
+    model.load_weights(r'models\mobilenet7\variables\variables')
     
     # #load model
     # model = Sequential([
