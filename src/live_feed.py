@@ -10,11 +10,10 @@ from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import CategoricalAccuracy
 
 def main():
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
     #create alphabet list of potential predictions
     alphabet = list("abcdefghiklmnopqrstuvwxy") + ['blank']
     
-    ## Transfer Learning
+    ## Compile the Model and Load Weights
     IMG_SIZE = (56,56)
     IMG_SHAPE = IMG_SIZE + (1,)
     base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE, include_top=False, weights=None)
@@ -62,24 +61,15 @@ def main():
 
         my_guess = model.predict(my_hand)
 
-        # see overall guesses and probability of guesses
-        # guess_vals = {tuple(alphabet):my_guess} 
-
         accuracy = np.max(my_guess)
         character = np.argmax(my_guess)
         letter = alphabet[character]
         print(f"Guess: {alphabet[character]}, Accuracy:{accuracy}")
         print()
-        # print(guess_vals)
-
-
 
 
         cv.putText(gray,letter,org,font,fontScale,color,fontThickness)
         cv.imshow("frame", gray)
-        # I wanted only a single frame for simplicity.
-        # cv.imshow("hand", cv.resize(hand, (400, 400)))
-
 
         if cv.waitKey(1) == ord('q'):
             break
@@ -89,6 +79,3 @@ def main():
    
 if __name__ == "__main__":
         main()
-    
-    
-
