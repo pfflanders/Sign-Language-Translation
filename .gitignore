@@ -4,8 +4,9 @@ live.zip
 live2.zip
 testing_models/hide/
 live2/
-
-
+**/.DS_Store
+Untitled.ipynb
+Comparison.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
