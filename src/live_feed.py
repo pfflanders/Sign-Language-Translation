@@ -32,40 +32,6 @@ def main():
     )
     model.load_weights(r'models\mobilenet7\variables\variables')
     
-    # #load model
-    # model = Sequential([
-    #     InputLayer(input_shape=(56, 56, 1)),
-    #     Conv2D(64, 5),
-    #     ReLU(),
-    #     Conv2D(64, 3),
-    #     ReLU(),
-    #     Conv2D(64, 3, strides=2),
-    #     ReLU(),
-    #     Dropout(0.2),
-    #     Conv2D(128, 3, strides=2),
-    #     ReLU(),
-    #     Dropout(0.2),
-    #     Conv2D(128, 3, strides=2),
-    #     ReLU(),
-    #     Dropout(0.2),
-    #     Flatten(),
-    #     Dense(512),
-    #     ReLU(),
-    #     Dense(512),
-    #     ReLU(),
-    #     Dense(25),
-    #     Softmax(),
-    # ])
-    # model.compile(
-    #     optimizer=Adam(learning_rate=0.001),
-    #     loss=CategoricalCrossentropy(),
-    #     metrics=[CategoricalAccuracy()]
-    # )
-    # model.load_weights(r'testing_models\full_dense_4_colab\variables\variables')
-
-    # cap = cv.VideoCapture(0, cv.CAP_DSHOW)
-    # Removed CAP_DSHOW
-    # if this was necessary then we'll need to figure out why it breaks on my system
     cap = cv.VideoCapture(0)
     if not cap.isOpened():
         print("Cannot open camera")
@@ -77,8 +43,8 @@ def main():
             break
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
         gray = cv.flip(gray, 1)
-        x1, x2 = 150, 550 # change these values to fit your webcam 
-        y1, y2 =  50, 450 # change these values to fit your webcam
+        x1, x2 = 250, 450 # change these values to fit your webcam 
+        y1, y2 =  150, 350 # change these values to fit your webcam
         gray = cv.rectangle(gray, (x1, y1), (x2, y2), (0, 1, 0), 4)
         hand = gray[y1:y2, x1:x2]
         hand = cv.resize(hand, (56, 56))
