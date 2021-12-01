@@ -20,14 +20,14 @@
 
     {% if letter %}
         <br>
-        <b>Thanks for submitting an image! This looks like the letter {{ letter }}.</b>
+        <b>Thanks for submitting an image! We are {{ acc }}% sure that this looks is the letter {{ letter }}.</b>
         <br>
         <img src="{{ image }}", alt="a 56x56 visualization of the supplied sign."/>
     {% endif %}
 
     {% if error %}
         <br>
-        Oh no, we couldn't use that file! Please upload an 56x56 numpy array as a text file!
+        Oh no, we couldn't use that file! Please upload an 56x56 .png file!
     {% endif %}
 
 {% endblock %}
