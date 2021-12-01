@@ -1,3 +1,4 @@
+# Importing relevant packages
 from flask import Flask, g, render_template, request
 from PIL import Image
 
@@ -66,11 +67,6 @@ def submit():
             accuracy = np.round(np.max(asl_guess)*100, 2)
             character = np.argmax(asl_guess)
             sign = alphabet[character]
-
-            # sign = "A"
-
-            # loaded_model = pickle.load(open("model/saved_model.pb", 'rb'))
-            # sign = loaded_model.predict(x)[0]
 
             # plot the image itself
             fig = Figure(figsize = (3, 3))
