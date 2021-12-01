@@ -1,0 +1,32 @@
+<!doctype html>
+
+<!-- This appears at the top of the browser window -->
+<title>PIC16B Project</title>
+<nav>
+  <!-- Web page heading -->
+  <h1>Sign Language Translator</h1>
+  <ul>
+    <!-- Adds link to submit page on main page -->
+    <li><a href="{{ url_for('main') }}">Welcome</a></li>
+    <li><a href="{{ url_for('submit') }}">Translate ASL</a></li>
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}
+    <p>Welcome! Feel free to use this American Sign Language (ASL) Parser Tool!</p>{% endblock %}
+  </header>
+  {% block content %}
+    <br>
+    <h4>About This Tool</h4>
+    <p>
+        Sign languages (or signed languages) are languages that utilize visual and manual modality (i.e., gestures) to convey meaning. Rather like other spoken languages of the world, sign languages are not universal or mutually comprehensible despite the various similarities among them. It is important to note that sign languages are not merely visual manifestations of other spoken languages like English, rather they are unique languages with their own set of linguistic rules.
+    </p>
+    <p>
+        Sign language processing is an emerging field of machine learning that falls within the intersection of natural language processing (NLP) and computer vision. As the name suggests, it involves both the analysis and automatic processing of sign language content. The goal of this project is to expand the field of sign language translation with a laptop-based tool which provides live-feed translation of basic sign language gestures. The overarching methodology involves creating a Convolutional Neural Network (CNN) that is not only small and fast enough to be run on standard laptops, but also robust enough to accurately translate words and symbols when they are present and not return too many false classifications. Additionally, with over two hundred sign languages being used around the world, a further aim of this project will be to widen the range of sign language input and attempt to process and analyze a significant portion of these languages.
+    </p>
+    <p>
+        Feel free to look at the github-repo for our project at this <a href="https://github.com/pfflanders/Sign-Language-Translation">link</a>.
+    </p>
+  {% endblock %}
+</section>
