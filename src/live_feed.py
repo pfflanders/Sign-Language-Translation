@@ -1,11 +1,9 @@
-import os
 import cv2 as cv
 import numpy as np 
 import tensorflow as tf
 
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import InputLayer, Flatten, Dense, ReLU, Softmax, Conv2D, Dropout, BatchNormalization
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.layers import Flatten, Dense, Softmax
 from tensorflow.keras.losses import CategoricalCrossentropy
 from tensorflow.keras.metrics import CategoricalAccuracy
 
@@ -42,8 +40,8 @@ def main():
             break
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
         gray = cv.flip(gray, 1)
-        x1, x2 = 250, 450 # change these values to fit your webcam 
-        y1, y2 =  150, 350 # change these values to fit your webcam
+        x1, x2 = 150, 550 # change these values to fit your webcam 
+        y1, y2 =  50, 450 # change these values to fit your webcam
         gray = cv.rectangle(gray, (x1, y1), (x2, y2), (0, 1, 0), 4)
         hand = gray[y1:y2, x1:x2]
         hand = cv.resize(hand, (56, 56))

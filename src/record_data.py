@@ -36,7 +36,7 @@ def main(letter: str, num_images: int):
     cv.destroyAllWindows()
 
     letter = letter
-    save_loc = os.path.join("./live2", letter)
+    save_loc = os.path.join("./live_p", letter)
     os.makedirs(save_loc, exist_ok=True)
     for img in imgs:
         id = time_ns()//100000
@@ -49,7 +49,7 @@ def main(letter: str, num_images: int):
 
 if __name__ == "__main__":
     try:
-        main('z_blank', 600)
+        main('y', 100)
     except:
         print('failed')
     
