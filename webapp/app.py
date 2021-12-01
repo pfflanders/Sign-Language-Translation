@@ -1,6 +1,8 @@
 from flask import Flask, g, render_template, request
 from PIL import Image
 
+import cv2 as cv
+
 import sklearn as sk
 import matplotlib.pyplot as plt
 import numpy as np
@@ -25,13 +27,12 @@ def submit():
     else:
         try:
             # Retrieve the image of hand gesture
-            # img = cv2.imread("image",mode='RGB')
-            img = Image.open("image")
+            img = Image.open(request.files['image'].stream)
             img = np.asarray(img)
 
             # reshape into appropriate format for prediction
             # Image resolution = (56 x 56)
-            x = img.reshape(1, 3136)
+            # x = img.reshape(1, 3136)
 
             # load pre-trained model and get prediction
             # Reference to model included here
@@ -47,7 +48,7 @@ def submit():
             pngImage = io.BytesIO()
             FigureCanvas(fig).print_png(pngImage)
 
-            # Encode PNG image to base64 string
+            # # Encode PNG image to base64 string
             pngImageB64String = "data:image/png;base64,"
             pngImageB64String += base64.b64encode(pngImage.getvalue()).decode('utf8')
 
