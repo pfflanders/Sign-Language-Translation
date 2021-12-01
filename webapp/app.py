@@ -69,9 +69,9 @@ def submit():
             sign = alphabet[character]
 
             # plot the image itself
-            fig = Figure(figsize = (3, 3))
+            fig = Figure(figsize = (4, 4))
             ax = fig.add_subplot(1, 1, 1,)
-            ax.imshow(img, cmap = "binary")
+            ax.imshow(img, cmap = "gray")
             ax.axis("off")
 
             # Plotting on Flask
