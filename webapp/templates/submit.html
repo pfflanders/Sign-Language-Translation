@@ -2,14 +2,13 @@
 {% extends 'main.html' %}
 
 {% block header %}
-  <h1>{% block title %}ASL Translator Tool{% endblock %}</h1>
+  <h1>{% block title %}American Sign Language Translator Tool{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-    <br>
     <form method="post" enctype="multipart/form-data">
         <!-- User interface for submitting an image of their hand gesture -->
-        <label for="image">Please upload an image of your hand gesture.</label><br>
+        <label for="image">Please upload an image of your hand gesture.</label><br><br>
         <input type="file" name="image" id="image">
         <input type="submit" value="Submit image">
     </form>
