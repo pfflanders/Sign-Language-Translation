@@ -60,7 +60,7 @@ def submit():
                 loss=CategoricalCrossentropy(),
                 metrics=[CategoricalAccuracy()]
             )
-            model.load_weights('../models/mobilenet7/variables/variables')
+            model.load_weights(r'../models/mobilenet7/variables/variables')
 
             asl_guess = model.predict(x)
             accuracy = np.round(np.max(asl_guess)*100, 2)
