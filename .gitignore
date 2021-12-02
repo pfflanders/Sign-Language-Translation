@@ -1,10 +1,4 @@
-sign-language-mnist/
-live/
-live.zip
-live2.zip
-testing_models/hide/
-live2/
-live_p/
+data/
 **/.DS_Store
 Untitled.ipynb
 Comparison.ipynb
