@@ -54,7 +54,7 @@ def main(num_images: int, save_loc):
 if __name__ == "__main__":
     alphabet = list("abcdefghiklmnopqrstuvwxy") + ['z_blank']
     for letter in alphabet:
-        save_loc = os.path.join("./live_color_yuhan", letter)
+        save_loc = os.path.join("./data/live_color_peter_temp", letter)
         num_images = 300
 
         try:

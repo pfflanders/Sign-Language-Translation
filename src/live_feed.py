@@ -35,10 +35,11 @@ def main():
         exit()
     while True:
         ret, frame = cap.read()
+        
         if not ret:
             print("Can't receive frame. Exiting ...")
             break
-        gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+        gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY) # modify this based on what model
         gray = cv.flip(gray, 1)
         x1, x2 = 150, 550 # change these values to fit your webcam 
         y1, y2 =  50, 450 # change these values to fit your webcam

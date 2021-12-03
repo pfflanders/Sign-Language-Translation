@@ -15,7 +15,7 @@ def move_class(dir1, dir2, dir_out, class_name):
         return
     os.makedirs(os.path.join(dir_out, class_name), exist_ok=True)
     for i, pic in enumerate(all_pics):
-        output_file = os.path.join(dir_out, class_name, f"{i}.jpg")
+        output_file = os.path.join(dir_out, class_name, pic.split("\\")[-1])
         copyfile(pic, output_file)
 
 
