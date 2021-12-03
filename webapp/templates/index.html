@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+
+{% block header %}
+  <h1>{% block title %}American Sign Language Alphabet Live Translation{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<body>   
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+            <h3 class="mt-5">Live Streaming</h3>
+            <img src="{{ url_for('video_feed') }}" alt = "/images/test.jfif" width="50%" id = 'videofeed'>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

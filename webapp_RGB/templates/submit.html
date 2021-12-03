@@ -1,0 +1,32 @@
+<!--The Submit Message Page Extended from main.html-->
+{% extends 'main.html' %}
+
+{% block header %}
+  <h1>{% block title %}American Sign Language Translator Tool{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">
+        <!-- User interface for submitting an image of their hand gesture -->
+        <label for="image">Please upload an image of your hand gesture.</label><br><br>
+        <input type="file" name="image" id="image">
+        <input type="submit" value="Submit image">
+    </form>
+
+    {% if thanks %}
+        <b>Thanks for submitting an image!</b>
+    {% endif %}
+
+    {% if letter %}
+        <br>
+        <b>Thanks for submitting an image! We are {{ acc }}% sure that this looks is the letter {{ letter }}.</b>
+        <br>
+        <img src="{{ image }}", alt="a 56x56 visualization of the supplied sign."/>
+    {% endif %}
+
+    {% if error %}
+        <br>
+        Oh no, we couldn't use that file! Please upload an 56x56 .png file!
+    {% endif %}
+
+{% endblock %}
