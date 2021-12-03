@@ -44,7 +44,7 @@ model.compile(
     loss=CategoricalCrossentropy(),
     metrics=[CategoricalAccuracy()]
 )
-model.load_weights(r'models\resnet50_1_color\variables\variables')
+model.load_weights(r'..\models\resnet50_1_color\variables\variables')
 
 
 def predict(image):
@@ -101,6 +101,7 @@ def gen_frames():
             fontThickness = 3
             color = (255,0,255)
             org = (150,100)
+            frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR) # modify this based on what model
             cv.putText(frame,guess,org,font,fontScale,color,fontThickness)
             ret, buffer = cv.imencode('.jpg', frame)
             frame = buffer.tobytes()
@@ -146,7 +147,7 @@ def submit():
                 loss=CategoricalCrossentropy(),
                 metrics=[CategoricalAccuracy()]
             )
-            model.load_weights(r'../models/mobilenet7/variables/variables')
+            model.load_weights(r'../models/mobilenet8/variables/variables')
 
             asl_guess = model.predict(x)
             accuracy = np.round(np.max(asl_guess)*100, 2)

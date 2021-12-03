@@ -27,7 +27,10 @@ def main():
         metrics=[CategoricalAccuracy()]
     )
     model.load_weights(r'models\resnet50_1_color\variables\variables')
-    
+    # resnet50_1_color - very good on white background
+    # 
+
+
     cap = cv.VideoCapture(0)
     if not cap.isOpened():
         print("Cannot open camera")
@@ -55,18 +58,20 @@ def main():
         sign = np.asarray(hand)
         sign = sign/255.0
         my_hand = sign[:,:].reshape((1,56,56,3))
-        # my_hand = (my_hand - my_hand.min())/(my_hand.max() - my_hand.min())
 
         my_guess = model.predict(my_hand)
 
         accuracy = np.max(my_guess)
         character = np.argmax(my_guess)
+        
+        
         letter = alphabet[character]
-        print(f"Guess: {alphabet[character]}, Accuracy:{accuracy}")
+        print(f"Guess: {letter}, Accuracy:{accuracy}")
         print()
 
 
         cv.putText(frame,letter,org,font,fontScale,color,fontThickness)
+        frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR) # modify this based on what model
         cv.imshow("frame", frame)
 
         if cv.waitKey(1) == ord('q'):
