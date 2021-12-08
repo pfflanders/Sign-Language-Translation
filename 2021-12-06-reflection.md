@@ -43,8 +43,15 @@ In this final part of our project, we ran into several setbacks while trying to 
 ## What are we especially proud of? 
 ~ 2 aspects of our project that we are proud of ~
 
+
 ## What would we have done to improve our project? 
-~ 2 things to improve on ~
+Originally, our project's focus was to be able to implement live feed sign language alphabet parsers on the same webapp; however, after realizing how much data was required in order to train our model (over 400,000 images), we were forced to quickly shift away from that goal in order to ensure that we were able to do at least one alphabet. If given more time, we would attempt to train a new model on a new sign language's alphabet. 
+
+Another thing we could have to do improve our project was increase the resolution of our input data. We had originally decided on using 56 x 56 sized images for our neural network in hopes of limiting the amount of training time it would take for our neural networks. While training time was most likely limited, there were many concerns about if the low resolution was enough to discern more finite details. For reference, many other models used input shapes of 64 x 64 and higher. It also felt that our model could vary in success based on the environment the user was in, so in order to create more robust model, perhaps we could train our model on more images at a higher resolution.
+
+Another aspect we would like to improve on is learning the corresponing JavaScript to implement our live feed onto an actual webapp and not our local servers. While we were successful in having our own local machines be able to transmit a live sign language parser, it is entirely dependent on whatever computer is hosting the server. The live feed will always be shown using the camera of the computer hosting the server. 
+
+Finally, the eventual goal was to see if we could teach a neural network to classify gestures in sign language. Due to the complex and confusing nature of data collection, we were turned away from this idea. However, if given more time and perhaps more processing power, we could experiment with using recurrrent Neural Networks with LSTM. 
 
 ## How does what we achieved compare to our initial goal? 
 To start off with, the goal of our project was to expand the field of sign language translation with a laptop-based tool that provides live-feed translation of basic sign language gestures, and we felt that we accomplished this goal to some extent. We were able to build and deploy a model that was able to (somewhat) successfully translate signed letters of American Sign Language (ASL) in real-time. 
@@ -61,7 +68,7 @@ With over two hundred sign languages being used around the world, another aim of
 
 ***Peter***: <br>
 
-***Elliot***: <br>
+***Elliot***:Personally, this project helped me gain more knowledge about . <br>
 
 ***Mansa***: <br>
 
