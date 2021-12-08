@@ -15,21 +15,15 @@ Worked primarily to deploy our Sign Language Translation model(s) into a web ser
 </div>
 {::options parse_block_html="false" /}
 
-### Did we meet our initial goal? 
-To start off with, the goal of our project was to expand the field of sign language translation with a laptop-based tool that provides live-feed translation of basic sign language gestures, and we felt that we accomplished this goal to some extent. We were able to build and deploy a model that was able to (somewhat) successfully translate signed letters of American Sign Language (ASL) in real-time. 
-
-With over two hundred sign languages being used around the world, a further aim of our project was to widen the range of sign language input and attempt to process sign languages other than ASL. However, given the scope of this project and our time constraints, we weren't quite able to achieve this further goal. That being said, given that we have built a model that can parse sign language content, we might be able to re-train it for other sign languages!
-
-### Acquiring the Data
+## What did we achieve in our project? 
+#### Acquiring the Data
 We initially ran into difficulties whilst trying to find a robust and comprehensive data sets to train our models and hence decided to create our own data sets instead. We used the OpenCV library, a library aimed at real-time computer vision, to take snap shots of our own hands making the various signs for various letters. Of course, this in itself had a couple of draw backs since some of the letters for ASL,  such as "Z" and "J" invovled moving gestures instead of fixed signs. Feel free to check out the code for recording the data in the `record_data.py` file in our GitHub repository!
 
 Additionally, none of us were familiar with ASL to begin with, so this was an unexpectedly tedious and challenging part of this project since we had to learn how to sign at least the letters of ASL before recording our data. Furthermore, some of us ran into issues while pushing the data to the GitHub repository since the files were too large (hence, it is possible that you might not see the full data set there). 
 
-### Creating the Models
+#### Creating and Evaluating the Model(s)
 
-### Evaluating our Model
-
-### Deploying our Model to a Web App
+#### Deploying our Model to a Web App
 With regards to deploying our model to a webapp, we decided to attempt to create a live feed translation so that sign language content could be processed in real-time. We did indeed try to write code in JavaScript and import the `.js` file into our `.html` files (stored within our `templates` folder). We experimented with various methods and JavaScript libraries (such as Webcam Easy JS), however even after multiple attempts we were not super successful; perhaps, this is because we were unfamiliar with JavaScript. Given more time, we might have eventually figured out how to accomplish this, but given the time constraints we decided to pivot in another direction. 
 
 Since we were really struggling for time, we decided to take a step back, start small, and try to see if we could upload images to our webapp, display those images, and have our webapp return a prediction. In class we had learned how to render images on a webapp by uploading 8x8 numpy arrays and return a prediction based on a model, however in this case we wanted to see if we could directly upload and process our `.png` files! Indeed, we were able to accomplish this after familiarizing ourselves with the Pillow library, or the Python Imaging Library. 
@@ -40,5 +34,30 @@ After we managed to deploy our model to our web app, we decided to try again and
 
 In this final part of our project, we ran into several setbacks while trying to deploy our model to the webapp; it often seemed like the minute we fixed one problem, we immediately ran into another problem. It was a very slow process and we really learned that we had to start simple and build our way to the more complex stuff iteratively. After making even a tiny change we would go back and check whether our webapp looked the way we wanted it to. In the end, though this was pretty time consuming and tedious, we thoroughly enjoyed this experience!
 
-### Final Thoughts...
-[Discussion of ethics and risks of our project here...]
+## What are we especially proud of? 
+~ 2 aspects of our project that we are proud of ~
+
+## What would we have done to improve our project? 
+~ 2 things to improve on ~
+
+## How does what we achieved compare to our initial goal? 
+To start off with, the goal of our project was to expand the field of sign language translation with a laptop-based tool that provides live-feed translation of basic sign language gestures, and we felt that we accomplished this goal to some extent. We were able to build and deploy a model that was able to (somewhat) successfully translate signed letters of American Sign Language (ASL) in real-time. 
+
+Originally, our project was intended for users who wished to communicate with others via sign language, which was why a further goal of our project was to translate signed phrases and moving gestures as well. However, given that ASL is an incredibly robust language and all three of us had limited knowledge of ASL (plus if you factor in the time constraint), we weren't quite able to achieve this goal. Eventually, the goal of our project evolved - we wanted to see whether webcams could reasonably parse sign language content. 
+
+With over two hundred sign languages being used around the world, another aim of our project was to widen the range of sign language input and attempt to process sign languages other than ASL. However, given the scope of this project and the time constraint, we weren't quite able to achieve this further goal. That being said, given that we have built a model that can parse sign language content, we might be able to re-train it for other sign languages!
+
+## What did we learn from this project experience? 
+~ three things we learned ~
+
+## How will this project experience help us in our future studies or career?
+~ Specific as possible; we can do this by name ~
+
+***Peter***: <br>
+
+***Elliot***: <br>
+
+***Mansa***: <br>
+
+## Final Thoughts...
+[Discussion of ethics and risks of our project here...?]
