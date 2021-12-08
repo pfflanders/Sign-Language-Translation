@@ -7,9 +7,9 @@ title: Protocol Droids: Final Reflection
 **Group Contributions**
 
 Peter Flanders: <br>
-
+Researched previous works' methodologies. Shared utility scripts to aid with collection of data and training of new models. Experimented with collection of diverse image data. Trained dozens of models.
 Elliot Shin: <br>
-
+Created live feed scripts and implemented them into our Flask app. Trained many models. Experimented with Fine-Tuning existing Image models. 
 Mansa Krishna: <br>
 Worked primarily to deploy our Sign Language Translation model(s) into a web service using Flask. 
 </div>
@@ -42,6 +42,8 @@ In this final part of our project, we ran into several setbacks while trying to 
 
 ## What are we especially proud of? 
 ~ 2 aspects of our project that we are proud of ~
+1. I  believe that all of the data we collected is valuable and can be used in the future for training hand gesture classifiers. At almost a gigabyte of images, managing the data also proved to be a task itself. Since we each recorded data individually, sharing the datasets, merging them together, and hosting them all needed to be addressed. 
+2. Obviously, in the end, we are very proud of the final model we trained. While its performance is still inconsistent, we believe that we are on a good track to actually generalize the model's learning to more diverse hands. 
 
 
 ## What would we have done to improve our project? 
