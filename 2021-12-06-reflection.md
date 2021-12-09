@@ -75,7 +75,7 @@ With over two hundred sign languages being used around the world, another aim of
 
 ***Peter***: <br>
 
-***Elliot***:Personally, this project helped me gain more knowledge about . <br>
+***Elliot***:Personally, this project helped me gain more knowledge about collaborative workflow. I do not think I have worked on an "independent" coding group project like this before. This project also helped me gain better insight into what factors can either make or break a neural network. Things like consistency of data, fine-tuning of transfer learning models, and implementing tools such as google colab really deepened my knowledge of machine learning. I have always been interested in neural networks, and having such a cool group project under my belt gives me the confidence to pursue more projects such as these and hopefully help with gaining some career experience in related fields. Implementing a webapp version of our project was also helpful in helping me with my understanding of what it takes to create an interface potential users can interact with. I am interested in the research aspect of user experience, and feel that this has helped me not only gain experience of implementing such an interface but also gain a sense of what does and does not work when it comes to user-centered design.  <br>
 
 ***Mansa***: <br>
 
