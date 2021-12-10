@@ -69,6 +69,9 @@ With over two hundred sign languages being used around the world, another aim of
 
 ## What did we learn from this project experience? 
 ~ three things we learned ~
+1. Better insight into neural networks!! We trained and compiled quite a few models during this entire project and really learned about how those hidden layers worked!
+2. Iterative coding is key! We definitely learned to check our work at every stage otherwise we ran the risk of running into bugs and not knowing where to look to fix them (especially because we had really lengthy scripts of code). 
+3. Lastly, we learned a little bit of sign language (which all three of us didn't know before).
 
 ## How will this project experience help us in our future studies or career?
 ~ Specific as possible; we can do this by name ~
@@ -78,6 +81,6 @@ With over two hundred sign languages being used around the world, another aim of
 ***Elliot***:Personally, this project helped me gain more knowledge about collaborative workflow. I do not think I have worked on an "independent" coding group project like this before. This project also helped me gain better insight into what factors can either make or break a neural network. Things like consistency of data, fine-tuning of transfer learning models, and implementing tools such as google colab really deepened my knowledge of machine learning. I have always been interested in neural networks, and having such a cool group project under my belt gives me the confidence to pursue more projects such as these and hopefully help with gaining some career experience in related fields. Implementing a webapp version of our project was also helpful in helping me with my understanding of what it takes to create an interface potential users can interact with. I am interested in the research aspect of user experience, and feel that this has helped me not only gain experience of implementing such an interface but also gain a sense of what does and does not work when it comes to user-centered design.  <br>
 
 ***Mansa***: <br>
+Personally for me, I am applying to graduate school (PhD program) in the Atmospheric and Oceanic Sciences/Earth Sciences. I am planning on pursuing research related to predicting climate change using machine learning and modelling our climate system, oceans, and atmosphere using numerical methods. I especially enjoyed the linear algebra and neural networks portion of this class and feel that this course especially helped me learn more about various technologies and algorithms I could implement for the same. 
 
-## Final Thoughts...
-[Discussion of ethics and risks of our project here...?]
+Additionally, I learned a whole lot about teamwork - this was actually one of the first computing classes I've had where I had to work as a part of a group and honestly I enjoyed the collaborative process a lot (not quite sure how I am going to go back to regular classes from now on). This was an important skill for me to learn since the scientific research process involves a lot of collaboration and peer review (from what I understand). With regards to research itself, I thought our group project was very similar to the scientific research process. A lot of the time we kept running into more problems than successes. I think I cultivated a lot of persistance and tenacity with this project (especially when trying to use Flask to deploy the webapp)! 
