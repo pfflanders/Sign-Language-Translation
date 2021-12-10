@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Protocol Droids: Final Reflection
+title: Protocol Droids - Final Reflection
 ---
 {::options parse_block_html="true" /}
 <div class="gave-help">
 **Group Contributions**
 
 Peter Flanders: <br>
-Researched previous works' methodologies. Shared utility scripts to aid with collection of data and training of new models. Experimented with collection of diverse image data. Trained dozens of models.
+Researched previous works' methodologies. Shared utility scripts to aid with collection of data and training of new models. Experimented with collection of diverse image data. Trained dozens of models.<br><br>
 Elliot Shin: <br>
-Created live feed scripts and implemented them into our Flask app. Trained many models. Experimented with Fine-Tuning existing Image models. 
+Created live feed scripts and implemented them into our Flask app. Trained many models. Experimented with Fine-Tuning existing Image models. <br><br>
 Mansa Krishna: <br>
 Worked primarily to deploy our Sign Language Translation model(s) into a web service using Flask. 
 </div>
