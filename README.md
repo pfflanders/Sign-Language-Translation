@@ -2,6 +2,32 @@
 Machine Learning Project with an interface providing the live translation of (hopefully multiple) sign languages.
 Authors: [Peter Flanders](https://github.com/pfflanders), [Mansa Krishna](https://github.com/mansakrishna23), and [Elliot Shin](https://github.com/elliotshin)
 
+
+### **How to Run**
+Before running anything make sure to create a new virtual environment and install the requirements. 
+```
+pip install -r requirements.txt
+```
+To test an older iteration of our project, you can choose to run the live feed directly:
+```
+> cd src
+> python live_feed.py
+```
+To run the most performative iteration of our model you will need to go to this google drive link [here](https://drive.google.com/drive/folders/1VpcQOhpQ3TKUlpDIU4wRFxep_9FH7ukP?usp=sharing). This is required because of GitHub's limit of 100MB per file (Currently the model is 250MB). Once you go to that link you will need to download all, the files will download into a folder titled something along the lines of `resnet50_1_color-20211210T193158Z-001.zip`. This will need to be extracted into our models folder. `.\models\`. Once you do that, ensure that the file `.\models\resnet50_1_color\variables\variables.data-00000-of-00001` exists (we do not want it to be one level deeper in `.\models\resnet50_1_color\resnet50_1_color\variables\variables.data-00000-of-00001`). 
+
+Then you can run the code in `live_feed_rgb.py` by running.
+```
+> cd src
+> python live_feed_rgb.py
+```
+Alternatively you can run our webapp using flask. This still requires the larger model to be unzipped. (Make sure to set flask environment variable to development if you wish.)
+```
+> cd webapp_RGB
+> flask run
+```
+
+When running the flask app, ending it as easy as closing the page and terminal. When running the live_feed directly you can kill the feed by pressing `Q` on your keyboard. 
+
 ### **Abstract**
 Sign languages (or signed languages) are languages that utilize visual and manual modality (i.e., gestures) to convey meaning. Rather like other spoken languages of the world, sign languages are not universal or mutually comprehensible despite the various similarities among them. It is important to note that sign languages are not merely visual manifestations of other spoken languages like English, rather they are unique languages with their own set of linguistic rules.
 

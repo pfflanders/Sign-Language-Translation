@@ -26,7 +26,7 @@ def main():
         loss=CategoricalCrossentropy(),
         metrics=[CategoricalAccuracy()]
     )
-    model.load_weights(r'models\resnet50_1_color\variables\variables')
+    model.load_weights(r'..\models\resnet50_1_color\variables\variables')
     # resnet50_1_color - very good on white background
     # 
 

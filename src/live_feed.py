@@ -27,7 +27,7 @@ def main():
         loss=CategoricalCrossentropy(),
         metrics=[CategoricalAccuracy()]
     )
-    model.load_weights(r'testing_models\mobilenet8\variables\variables')
+    model.load_weights(r'..\models\mobilenet8\variables\variables')
     
     cap = cv.VideoCapture(0)
     if not cap.isOpened():
